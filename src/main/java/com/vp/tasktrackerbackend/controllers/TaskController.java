@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 @RequestMapping("/task")
 public class TaskController {
-
     private final TasksService tasksService;
 
     @PostMapping("/add")
