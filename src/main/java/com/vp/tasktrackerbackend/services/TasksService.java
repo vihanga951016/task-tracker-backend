@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 @AllArgsConstructor
 public class TasksService {
@@ -14,6 +16,7 @@ public class TasksService {
     private final TasksRepository tasksRepository;
 
     public ResponseEntity addTask(TasksBean bean) {
+        bean.setAddedDate(new Date());
         return new ResponseEntity<>(tasksRepository.save(bean), HttpStatus.OK);
     }
 

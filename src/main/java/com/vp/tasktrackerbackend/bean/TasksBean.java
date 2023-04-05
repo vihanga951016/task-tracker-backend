@@ -19,6 +19,7 @@ public class TasksBean {
     private Integer id;
     private String title;
     private String description;
+    @Temporal(TemporalType.DATE)
     private Date addedDate;
     private boolean done;
     private boolean disabled;
