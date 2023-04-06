@@ -73,4 +73,15 @@ public class TasksService {
         tasksBean.setDone(!tasksBean.isDone());
         return new ResponseEntity<>(tasksRepository.save(tasksBean), HttpStatus.OK);
     }
+
+    public ResponseEntity compulsoryTask(Integer id){
+        TasksBean tasksBean = tasksRepository.findAnyTaskById(id);
+        if(tasksBean == null) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("Task Not Found");
+        }
+
+        tasksBean.setCompulsory(!tasksBean.isCompulsory());
+        return new ResponseEntity<>(tasksRepository.save(tasksBean), HttpStatus.OK);
+    }
 }

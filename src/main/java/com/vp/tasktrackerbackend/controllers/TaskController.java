@@ -47,4 +47,9 @@ public class TaskController {
         return tasksService.doneTask(id);
     }
 
+    @PostMapping("/compulsory-task/task/{id}")
+    public ResponseEntity compulsoryTask(@PathVariable Integer id) {
+        return tasksService.compulsoryTask(id);
+    }
+
 }

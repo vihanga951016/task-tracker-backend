@@ -23,4 +23,5 @@ public class TasksBean {
     private Date addedDate;
     private boolean done;
     private boolean disabled;
+    private boolean compulsory;
 }
